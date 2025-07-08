@@ -1,0 +1,2 @@
+DELETE FROM `funcionario` 
+WHERE `Matricula` = '128-33'

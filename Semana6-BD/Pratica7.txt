@@ -1,0 +1,35 @@
+DROP TABLE `funcionario`;
+
+CREATE TABLE `Departamento` (
+    `ID_Depto` INT PRIMARY KEY , 
+    `Nome_Depto` VARCHAR(50) NOT NULL, 
+    `Local` VARCHAR(50) 
+);
+
+INSERT INTO `Departamento` VALUES 
+    ('1', 'Vendas', 'Bloco 1 - 1o. andar'), 
+    ('2', 'Estoque', 'Bloco 2');
+
+CREATE TABLE `Funcionario` (
+    Matricula   VARCHAR(10) PRIMARY KEY,  
+    Nome        VARCHAR(50),         
+    CPF         VARCHAR(15),         
+    DataNasc    DATE,                
+    Email       VARCHAR(50),         
+    CEP         VARCHAR(10),
+    fk_ID_Depto INT, 
+    FOREIGN KEY (`fk_ID_Depto`) REFERENCES `Departamento`(`ID_Depto`) /* FK -> PK */
+); 
+                     
+INSERT INTO `funcionario` VALUES 
+    ('123-45','Maria das Flores','123.456.789-88','1990-20-12', 'maria.f@email.com', '80123-080', 1), 
+    ('125-28', 'José Soares', '234.567.890.77', '1985-04-30', 'jose.s@email.com', '81456-089', 1),
+    ('128-33', 'Carla Maria', '345.678.912.33', '1999-07-03', 'carla.m@email.com', '82456-008', 2);
+
+SELECT * 
+FROM `departamento` AS `D`, `funcionario` AS `F` 
+WHERE D.ID_Depto = F.fk_ID_Depto; 
+
+SELECT D.Nome_Depto AS `Nome Departamento`, F.Nome AS `Nome Funcionario`                      
+FROM `departamento` AS `D`, `funcionario` AS `F` 
+WHERE D.ID_Depto = F.fk_ID_Depto;

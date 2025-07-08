@@ -1,0 +1,2 @@
+SELECT * FROM `funcionario`;
+SELECT * FROM `funcionario` WHERE matricula = '123-45'

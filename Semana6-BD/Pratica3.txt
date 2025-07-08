@@ -1,0 +1,4 @@
+INSERT INTO base1.Funcionario VALUES 
+    ('123-45','Maria das Flores', '123.456.789-88','1990-12-20','maria.f@email.com', '80123-080'),
+    ('125-28', 'José Soares', '234.567.890.77', '1985-04-30', 'jose.s@email.com', '81456-089'),
+    ('128-33', 'Carla Maria', '345.678.912.33', '1999-07-03', 'carla.m@email.com', '82456-008')

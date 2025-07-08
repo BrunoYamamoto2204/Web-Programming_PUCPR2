@@ -1,0 +1,93 @@
+------------------------------ CRIAÇÃO DATABASE ------------------------------
+CREATE DATABSE ClinicaA;
+
+
+------------------------------ CRIAÇÃO TABELAS ------------------------------
+CREATE TABLE Especialidade (
+    ID_Espec INT PRIMARY KEY,
+    Espec_nome VARCHAR(50),
+    Descricao TEXT
+);
+
+CREATE TABLE Medico (
+    ID_Medico INT PRIMARY KEY,
+    Med_nome VARCHAR(50),
+    CRM VARCHAR(15),
+    DataNasc DATE,
+    Genero VARCHAR(4),
+    fk_ID_Espec INT,
+    FOREIGN KEY (fk_ID_Espec) REFERENCES Especialidade (ID_Espec)
+);
+
+CREATE TABLE Paciente (
+    ID_Paciente INT PRIMARY KEY,
+    Pac_nome VARCHAR(50),
+    CPF VARCHAR(15),
+    DataNasc DATE,
+    Genero VARCHAR(4)
+);
+
+CREATE TABLE Consulta (
+    ID_Consulta INT PRIMARY KEY,
+    fk_ID_Medico INT,
+    fk_ID_Paciente INT,
+    Data DATE,
+    Hora TIME,
+    Descricao TEXT,
+    FOREIGN KEY (fk_ID_Paciente) REFERENCES Paciente (ID_Paciente),
+    FOREIGN KEY (fk_ID_Medico) REFERENCES Medico (ID_Medico)
+);
+
+------------------------------ INSERIR DADOS ------------------------------
+INSERT INTO `especialidade` VALUES 
+    (1,'Endocrinologia','Especialidade médica que estuda as ordens do sistema endócrino.'),
+    (2,'Pediatria','Especialidade médica que cuida de bebês, crianças e adolescentes.'),
+    (3,'Dermatologia','Especialidade médica que cuida das enfermidades relacionadas à pele.');
+
+INSERT INTO `medico` VALUES 
+    (1021,'Carlos Pereira','PR 4040-5','1990-06-18','Masc',1),
+    (1034,'Amanda Torres','SP 5518-8','1992-10-01','Fem',2),
+    (1057,'Luiz Cézar','RS 4537-0','1988-05-22','Masc',3);
+
+INSERT INTO `paciente` VALUES
+    (45,'Alberto Santos','1234-55','1950-05-02','Masc'),
+    (55,'Camila Farias','2345-66','1970-02-10','Fem'),
+    (65,'Maria Paula','3456-77','2000-04-28','Fem');
+
+INSERT INTO `consulta` VALUES 
+    (1,1021,45,'2022-06-20','14:00','Primeira consulta'),
+    (2,1034,55,'2022-07-03','10:00','Primeira consulta'),
+    (3,1021,65,'2022-08-14','16:30','Reconsulta');
+
+------------------------------ SELECIONAR DADOS ------------------------------
+SELECT * FROM Paciente;
+SELECT * FROM Especialidade;
+SELECT * FROM Medico;
+SELECT * FROM Consulta;
+
+SELECT  C.ID_Consulta AS Consulta, C.Data, C.Hora, E.Espec_nome AS Especialidade, 
+        M.Med_nome AS Médico, P.Pac_nome AS Paciente, C.Descricao
+FROM    Consulta AS C, Medico AS M, Paciente AS P, Especialidade AS E
+WHERE   C.fk_ID_Medico = M.ID_Medico AND
+        C.fk_ID_Paciente = P.ID_Paciente AND
+        M.fk_ID_Espec = E.ID_Espec
+ORDER BY    
+        C.Data, C.Hora, M.Med_nome, P.Pac_nome;
+
+------------------------------ ATUALIZAR DADOS ------------------------------
+UPDATE `medico` 
+SET `Med_nome`='Cláudio Pereira'
+WHERE ID_Medico = 1021;
+
+SELECT  *
+FROM    Medico
+WHERE   ID_Medico = 1021;
+
+------------------------------ DELETAR DADOS ------------------------------
+INSERT INTO especialidade VALUES (4, "Especialidade teste", "teste");
+
+DELETE FROM `Especialidade` 
+WHERE ID_Espec = 4; 
+ 
+SELECT  *
+FROM    Especialidade;

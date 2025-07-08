@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Front-end</title>
+    <link rel="stylesheet" href="css/layout.css" type="text/css">
+    <link rel="stylesheet" href="./layout/index.css">
+</head>
+
+<body>
+
+    <!-- Este elemento que define o Menu -->
+    <div class="sidebar">
+        <a class="active" href="index.html">Home</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <!-- Este elemento que define o conteúdo da página principal -->
+    <div class="content">
+        <h2 class="titleTop">Cupcake Backery Shop</h2>
+        <h3 class="titleBottom">Menu Tradicional</h3>
+        <div class="first">
+            <div class="menu">
+                <img class="imgStamp" src="img/CupFlavor1.png">
+                <input class="modalButton" type="button" value="Saiba mais..." id="CupFlavor1Button" name="CupFlavor1">
+            </div>
+            <div class="menu">
+                <img class="imgStamp" src="img/CupFlavor2.png">
+                <input class="modalButton" type="button" value="Saiba mais..." id="CupFlavor2Button" name="CupFlavor2">
+            </div>
+            <div class="menu">
+                <img class="imgStamp" src="img/CupFlavor3.png">
+                <input class="modalButton" type="button" value="Saiba mais..." id="CupFlavor3Button" name="CupFlavor3">
+            </div>
+        </div>
+        
+        <div class="second">
+            <div class="menu">
+                <img class="imgStamp" src="img/CupFlavor4.png">
+                <input class="modalButton" type="button" value="Saiba mais..." id="CupFlavor4Button" name="CupFlavor4">
+            </div>
+            <div class="menu">
+                <img class="imgStamp" src="img/CupFlavor5.png">
+                <input class="modalButton" type="button" value="Saiba mais..." id="CupFlavor5Button" name="CupFlavor5">
+            </div>
+            <div class="menu">
+                <img class="imgStamp" src="img/CupFlavor6.png">
+                <input class="modalButton" type="button" value="Saiba mais..." id="CupFlavor6Button" name="CupFlavor6">
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Detalhes -->
+    <div id="knowMore" class="modal">
+        <header>
+            <span id="closeModalButton" class="topright">X</span>
+        </header>
+        <div>
+            <p id="txt1" class="infoH"></p>
+            <p id="txt2" class="info"></p>
+            <p id="txt3" class="info"></p>
+        </div>
+    </div>
+
+    <!-- Referência ao arquivo Javascript -->
+    <script src="script/script.js"></script>
+    
+</body>
+
+</html>

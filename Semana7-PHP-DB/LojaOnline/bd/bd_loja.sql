@@ -1,0 +1,11 @@
+CREATE DATABASE LojaDB;
+
+CREATE TABLE Produto (
+	ID_Produto INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(100) NOT NULL,
+    Preco DECIMAL NOT NULL,
+    Categoria VARCHAR(50),
+    Descricao TEXT,
+    Foto LONGBLOB
+);
+

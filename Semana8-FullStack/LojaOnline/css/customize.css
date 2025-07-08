@@ -1,0 +1,614 @@
+:root{
+    --default-font: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    --secondary-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --signup-font: "Mulish", sans-serif;;
+    --title-font1: "Karla", sans-serif;
+    --bg-linear1: linear-gradient(to bottom, #F0B12B, white);
+    --bg-linear2: linear-gradient(to bottom, #F0B12B, #ecd8b3);
+    --bg-linear3: linear-gradient(to bottom, #E37709, #ecd8b3);
+    --bg-linear4: linear-gradient(to bottom, #E37709, white);
+    --highlight-color:#E37709;
+    --light-gray: #F0F0F1;
+    --box-shadow-fraco: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --box-shadow-medio: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --box-shadow-forte: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+*{
+    font-family: var(--default-font);
+}
+
+.w3-theme {
+    color: #ffff !important;
+    background: linear-gradient(to bottom, #F0B12B, #e9c075) !important
+}
+
+/* -------------------------------- CONTA -------------------------------- */
+
+.dados-conta{
+    border-radius: 20px;
+    font-size: 1.3em;
+    padding: 30px;
+    width: 60%;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.info-conta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.info-conta p{
+    margin: 5px;
+}
+.info-conta a{
+    width: 60%;
+    padding: 8px;
+}
+
+.botoes-conta{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    background: var(--light-gray);
+    padding: 10px 30px;
+}
+
+.confExclusaoConta{
+    background: var(--light-gray);
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 10px; /* Aqui sim! */
+    overflow: hidden;
+}
+.confExclusaoConta h2, .confExclusaoConta form{
+    padding: 30px;  
+    margin: 0;
+}
+
+
+
+/* -------------------------------- MENU -------------------------------- */
+.logo img {
+    width: 12%;
+}
+
+.layout-header{
+    width: 100%;
+    box-shadow: var(--box-shadow-medio);
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1.2em;
+}
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;;
+    margin: 0 auto;
+}
+
+.foto-menu{
+    width:50px;
+    border-radius: 50%;
+}
+
+/* -------------------------------- INDEX-MENU -------------------------------- */
+
+.main-login {
+    height: 100%; 
+}
+.login-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    width: 100%;
+    padding: 20px;
+    background: var(--bg-linear1);
+}
+.login-content h1{
+    font-family: var(--title-font1);
+    font-weight: 500;
+    font-size: 3em;
+    margin: 0;
+}
+.login-content h2{
+    font-size: 1.5em;
+    font-weight: 300;
+    text-align: center;
+    margin: 0;
+}
+.login-content img{
+    height: 500px;  
+}
+.botao-acessar{
+    padding: 5px;
+    font-size: 2em;
+    text-decoration: none;
+    border-radius: 10px;
+    width: 70%;
+}
+.botao{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.container{
+    margin: auto;
+    height: 100%;
+}
+.topicos-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: auto;
+    width: 80%;
+    gap: 30px;
+}
+.topico-item{
+    text-align: center;
+    width: 100%;
+    box-shadow: var(--box-shadow-forte);
+    border-radius: 20px;
+    margin: 10px;
+    padding: 20px;
+    background:  var(--bg-linear2);
+}
+.topico-item p{
+    width: 60%;
+    margin: auto;
+}
+.topico-item i {
+    font-size: 500%;
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+}
+/* -------------------------------- SIGN UP -------------------------------- */
+.form-signup{
+    background: var(--bg-linear3);
+    width: 60%;
+    margin: auto;
+    padding: 30px 0;
+    border-radius: 20px;
+}
+.form-signup h1, .form-signup h3{
+    text-align: center;
+    color: white;
+    margin: 0;
+    font-weight: 500;
+}
+.form-signup h3 {
+    margin-bottom: 5%;
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+
+.signup-label{
+    width: 80%;
+    display: block;
+    margin: auto;
+    font-size: 1.3em;
+    padding-left: 10px;
+    color: white;
+    font-family: var(--title-font1);
+}
+.signup-input{
+    margin: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    outline: none;
+    display: block;
+    color: rgb(47, 55, 63);
+    background-color: var(--light-gray);
+    font-size: 17px;
+    border: none;
+    padding: 20px;
+    width: 80%;
+}
+.senha-container-signup {
+    position: relative; /*  Limita o tamanho ao do elemento pai */
+    display: flex;
+    align-items: center; 
+}
+
+.mostrar-senha-signup {
+    position: absolute; /* Faz com que os outros elementos o ignorem, não interferindo na altura ou largura */
+    right: 12%; 
+    cursor: pointer;
+    font-size: 1.2rem; 
+    color: #888; 
+}
+
+.senha-diferente{
+    width: 80%;
+    margin: auto;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.termo{
+    text-align: center;
+    margin:auto;
+}
+
+.signup-botoes{
+    text-align: center;
+}
+.signup-button{
+    background: rgb(81, 92, 104);
+    color: #fff;
+    margin: 10px;
+    width: 30%;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+/* -------------------------------- SIGN UP.EXE -------------------------------- */
+.main-signup-exe{
+    width: 50%;
+    margin: 50px auto;
+    box-shadow: var(--box-shadow-forte);
+}
+.signup-sucesso{
+    padding: 20px;
+    border-top-left-radius: 20px;
+    margin: 0;
+}
+.texto-signup{
+    background: var(--light-gray);
+    padding: 20px;
+}
+.texto-signup h2{
+    font-size: 2em;
+    text-align: center;
+    margin: 0;
+}
+.texto-signup h3{
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 3%;
+}
+.signup-exe-button{
+    background: rgb(81, 92, 104);
+    color: #fff;
+    margin: auto;
+    width: 30%;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+/* -------------------------------- LOGIN -------------------------------- */
+
+.main-header {
+    text-align: center;
+}
+.main-header h1{
+    font-size: 3em;
+    font-weight: 500;
+}
+
+.contact-form{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.form-content{
+    display: grid;
+    grid-template-columns: 0.7fr 1fr;
+    height: 600px;
+    width: 1200px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Form Description */
+.form-description{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    background: var(--bg-linear3);
+    color: rgba(255, 255, 255, 0.87);
+}
+.form-description h1{
+    margin: 0;
+}
+.form-description h2{
+    font-size: 1.1em;
+    font-weight: lighter;
+    padding-bottom: 25px;
+}
+
+.form-description a {
+    width: 300px;
+    font-size: 1.5em;
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: white;
+    background:  var(--highlight-color);
+    text-align: center;
+    text-decoration: none;
+}
+
+.form-description a:hover{
+    background: #f1f1;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+/* Form */
+.form-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-gray);
+}
+.form-login h1{
+    padding-bottom: 30px;
+    color: var(--highlight-color);
+}
+
+.login{
+    width: 80%;
+}
+
+.login-input{
+    margin: auto;
+    margin-bottom: 10px;
+    outline: none;
+    background-color: var(--light-gray);
+    display: block;
+    color: rgb(47, 55, 63);
+    font-size: 17px;
+    border: none;
+    border-bottom: 1px solid #999;
+    padding: 6px 30px;
+    box-sizing: border-box;
+    width: 80%;
+}
+.form-button input{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+.form-submit {
+    display: inline-block;
+    background: rgb(81, 92, 104);
+    color: #fff;
+    width: auto;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+.form-submit:hover {
+    background: rgb(5, 58, 110);
+    transition: background-color 0.3s;
+    border: none;
+}
+
+::placeholder {
+    color: rgb(166, 179, 196);
+    font-size: medium;
+}
+
+
+.senha-container {
+    position: relative; /*  Limita o tamanho ao do elemento pai */
+    display: flex;
+    align-items: center; 
+}
+
+.mostrar-senha {
+    position: absolute; /* Faz com que os outros elementos o ignorem, não interferindo na altura ou largura */
+    right: 10px; 
+    cursor: pointer;
+    font-size: 1.2rem; 
+    color: #888; 
+}
+
+.mensagem-erro{
+    margin-top: 0;
+    text-align: center;
+}
+
+.lembrar-esquecer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+}
+
+/* -------------------------------- LAYOUT -------------------------------- */
+
+.layout{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main{
+    margin: 50px;
+}
+
+/* -------------------------------- LISTAR -------------------------------- */
+.aviso-exclusao{
+    background: var(--light-gray);
+    text-align: center;
+    font-size: 1.4em;
+    color: black;
+    font-weight: 400;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.foto {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.main-content th{
+    color: #F7A743;
+}
+.td-acoes{
+    display: inline-block;
+    margin: 10px;
+    font-size: 1.5em;
+}
+.td-acoes a{
+    padding: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 10px;
+}
+.td-acoes a:hover{
+    background: #F0B12B;
+    border-radius: 10px;
+}
+
+.td-acoes a .fa-pen-to-square{
+    color: #888;
+}
+.td-acoes a .fa-trash{
+    color: var(--highlight-color);
+}
+.td-acoes a:hover .fa-pen-to-square,
+.td-acoes a:hover .fa-trash {
+    color: white;
+}
+
+/* -------------------------------- INCLUIR -------------------------------- */
+
+option{
+    font-family: var(--secondary-font);
+    font-weight: 500;
+}
+
+.form{
+    font-size: large;
+    background-color: lightgray;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+td>div{
+    margin-bottom: 20px;
+}
+.imagem-produto{
+    margin: auto;
+    text-align: center;
+}
+#imagemSelecionada{
+    width: 30%;
+    border-radius: 20px;
+}
+.cadastro-input{
+    border-radius: 10px;
+    box-shadow: var(--box-shadow-fraco);
+}
+.botao-borda{
+    border-radius: 10px;
+}
+.enviarCancelar{
+    padding: 10px;
+    margin:0;
+}
+
+.texto-aviso-2{
+    font-size: 0.8em;
+    font-style: italic;
+    margin: 0;
+}
+/* -------------------------------- INCLUIR.EXE -------------------------------- */
+.cadastro-sucesso{
+    padding: 10px;
+    margin: 0;
+    border-top-left-radius: 20px;
+}
+.botao-maior {
+    margin: 20px auto;
+    border-radius: 15px;
+    font-size: 1.2em;
+}
+
+/* -------------------------------- EXCLUIR.EXE -------------------------------- */
+.exclusao-content {
+    border-radius: 20px;
+    width: 60%;
+    margin: 0 auto;
+    overflow: hidden; 
+    box-shadow: var(--box-shadow-forte);
+}
+
+.subtitulo {
+    padding: 20px;
+    text-align: center;
+    font-weight: 500;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: var(--light-gray);
+}
+
+.subtitulo h2{
+    font-size: 1.2em;
+    border-radius: 20px;
+    margin-top: 0;
+}
+
+.dados-exclusao{
+    border-radius: 20px;
+    font-size: 1.3em;
+    padding: 30px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.chave{
+    color: var(--highlight-color);
+}
+
+.chave span{
+    color: black;
+}
+
+.foto-redonda{
+    padding: 20px;
+    background: var(--light-gray);
+    border-radius: 20px;
+}
+.foto-margin{
+    margin: 0 auto;
+}
+
+
+.botoes-exclusao{
+    display: flex;
+    justify-content: flex-end;
+    background: var(--light-gray);
+    padding: 10px 30px;
+}
+
+.destaque-nome{
+    color: var(--highlight-color)
+}

@@ -1,0 +1,94 @@
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.w3-theme {
+    color: #ffff !important;
+    background: linear-gradient(to bottom, #F0B12B, #f5d291) !important
+}
+
+/* -------------------------------- MENU -------------------------------- */
+.logo {
+    text-align: center;
+}
+.logo img {
+    width: 50%;
+}
+
+.layout-header{
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1.2em;
+}
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;;
+    margin: 0 auto;
+}
+/* -------------------------------- LAYOUT -------------------------------- */
+.layout{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main{
+    margin: 50px;
+}
+
+/* -------------------------------- LISTAR -------------------------------- */
+.foto {
+    max-width: 200px;
+    height: 150px;
+    border-radius: 50%;
+}
+.main-content th{
+    color: #F7A743;
+}
+
+/* -------------------------------- INCLUIR -------------------------------- */
+
+.form{
+    font-size: large;
+    background-color: lightgray;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+td>div{
+    margin-bottom: 20px;
+}
+.imagem-produto{
+    margin: auto;
+    text-align: center;
+}
+#imagemSelecionada{
+    width: 30%;
+}
+input, select{
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.botao-cancelar{
+    border-radius: 15px;
+}
+.enviarCancelar{
+    padding: 10px;
+}
+
+/* -------------------------------- INCLUIR.EXE -------------------------------- */
+.cadastro-sucesso{
+    padding: 10px;
+    margin: 0;
+}
+.botao-voltar {
+    margin: 20px auto;
+    border-radius: 15px;
+    font-size: 1.2em;
+}

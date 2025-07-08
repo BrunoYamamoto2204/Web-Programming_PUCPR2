@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<head>
+
+    <meta charset="utf-8">
+    <title>Jogo Adivinhe um número</title>
+    <style>
+        html {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        body {
+            width: 70%;
+            max-width: 900px;
+            min-width: 500px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Jogo Adivinhe um número</h1>
+    <p>Selecionamos um número aleatório entre <b>1</b> e <b>100</b> </p>
+    <p>Veja se consegue adivinhar em <b>10</b> chances ou menos. </p>
+    <p>Nós lhe diremos se seu palpite está com valor <b>alto</b> ou <b>baixo</b>.</p>
+
+    <div class="form">
+        <label for="campoPalpite">Digite seu palpite: </label>
+        <input type="text" id="campoPalpite" class="campoPalpite">
+        <button class="envioPalpite">Enviar palpite</button>
+    </div>
+
+    <div class="cjtoResultados">
+        <p class="palpites"></p>
+        <p class="ultimoResultado"></p>
+        <p class="baixoOuAlto"></p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let numeroAleatorio = Math.floor(Math.random() * 100) + 1
+            console.log(numeroAleatorio)
+
+            let palpites = document.querySelector(".palpites");
+            let ultimoResultado = document.querySelector(".ultimoResultado");
+            let baixoOuAlto = document.querySelector(".baixoOuAlto");
+
+            let campoPalpite = document.querySelector(".campoPalpite");
+            let envioPalpite = document.querySelector(".envioPalpite");
+
+            let tentativas = 0
+            let botaoReinicio
+
+            function conferirPalpite() {
+                const palpite = Number(campoPalpite.value)
+
+                if (tentativas === 0) palpites.innerHTML = "Palpites anteriores: " 
+                
+                palpites.innerHTML += " " + palpite
+                
+                tentativas++
+                campoPalpite.value = ""
+                campoPalpite.focus()
+
+                if (palpite === numeroAleatorio) {
+                    ultimoResultado.innerHTML = "Parabéns! Você acertou! O número certo é " + numeroAleatorio
+                    ultimoResultado.style.background = "lightgreen"
+                    baixoOuAlto.innerHTML = ""
+                    fimDeJogo()
+                }
+                else if (tentativas >= 10){
+                    ultimoResultado.innerHTML = "Você perdeu, foram 10 tentativas! O número certo era " + numeroAleatorio
+                    ultimoResultado.style.background = "lightred"
+                    baixoOuAlto.innerHTML = ""
+                    fimDeJogo()
+                }
+                else {
+                    ultimoResultado.innerHTML = "Errado"
+                    ultimoResultado.style.background = "lightcoral"
+
+                    if (palpite > numeroAleatorio){
+                        baixoOuAlto.innerHTML = "O número é MAIS BAIXO"
+                    }
+                    else {
+                        baixoOuAlto.innerHTML = "O número é MAIS ALTO"
+                    }
+                }
+            }
+
+            function fimDeJogo() {
+                campoPalpite.disabled = true
+                envioPalpite.disabled = true
+
+                botaoReinicio = document.createElement("button")
+                botaoReinicio.innerText = "Iniciar novamente"
+                document.body.appendChild(botaoReinicio)
+
+                botaoReinicio.addEventListener("click", reiniciarJogo)
+            }
+
+            function reiniciarJogo(){
+                numeroAleatorio = Math.floor(Math.random() * 100) + 1
+                console.log(numeroAleatorio)
+
+                tentativas = 0
+                campoPalpite.disabled = false
+                envioPalpite.disabled = false
+
+                palpites.innerHTML = "";
+                ultimoResultado.innerHTML = "";
+                baixoOuAlto.innerHTML = "";
+                botaoReinicio.parentNode.removeChild(botaoReinicio)
+            }
+
+            envioPalpite.addEventListener("click", conferirPalpite)
+        })
+    </script>
+
+</body>
+</html>
