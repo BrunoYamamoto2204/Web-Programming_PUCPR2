@@ -40,8 +40,8 @@ O sistema simula o painel de administração de um e-commerce e foi desenvolvido
 
 
 ### 📂 Arquivo Principal:
-
 A lógica principal e a execução do projeto estão contidas no diretório: [`Somativa2-Web`](./Somativa2-Web)
+
 ---
 
 ## 💡 Tecnologias Utilizadas
