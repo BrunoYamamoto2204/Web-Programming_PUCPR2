@@ -38,6 +38,10 @@ O sistema simula o painel de administração de um e-commerce e foi desenvolvido
 - **🔒 Proteção de rotas:** Páginas principais só são acessíveis após login válido.
 - **📁 Dados permanentes:** Todas as alterações são salvas no banco de dados MySQL.
 
+
+### 📂 Arquivo Principal:
+
+A lógica principal e a execução do projeto estão contidas no diretório: [`Somativa2-Web`](./Somativa2-Web)
 ---
 
 ## 💡 Tecnologias Utilizadas
